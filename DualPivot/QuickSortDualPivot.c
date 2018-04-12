@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "Funcoes.h"
 
-// 50, 1000, 50000, 500000 elementos
 
 void troca (int* a, int* b){
     int aux = *a;
@@ -53,3 +52,17 @@ int divide(int* vet, int menorPos, int maiorPos, int*pivoEsq){
         *pivoEsq = i;
         return j;
 }
+
+//essa main esta inserindo os dados manualmente. tirei pra poder implementar a leitura de dados aleatorios.
+/*int main(int argc, char** argv) {
+
+    int vet[] = {24, 8, 42, 75, 29, 77, 38, 57};
+    qSDualPivot(vet, 0, 7);
+    int i;
+    for (i=0; i<8; i++){
+        printf("%d \n", vet[i]);
+    }
+    
+    return (EXIT_SUCCESS);
+}*/
+
