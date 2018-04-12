@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "Funcoes.h"
 
 // 50, 1000, 50000, 500000 elementos
 
