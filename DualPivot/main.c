@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "ES.h"
 #include "Funcoes.h"
 
@@ -13,6 +14,9 @@ int main(int argc, char** argv) {
     FILE *b;
     int op, tamanho_vetor; //op = variavel para armazenar opções/tamanho_vetor = guarda o tamanho do vetor
     char entrada[100], saida[100];
+    
+    srand(time(NULL));
+    
     printf("Digite o nome do arquivo\n");
     scanf(" %[^\n]s", entrada);
     
@@ -29,7 +33,7 @@ int main(int argc, char** argv) {
     //MENU
     do {
         printf("[1]Ordenar por DualPivot QuickSort (ordem crescente)\n");
-        printf("[2]Ordenar por DualPivot QuickSort (ordem decrescente)\n");
+        printf("[2]Ordenar por QuickSort Tradicional\n");
         printf("[3]Sair\n");
         scanf("%d", &op);
         
@@ -40,12 +44,11 @@ int main(int argc, char** argv) {
                 scanf(" %[^\n]s", saida);
                 qSDualPivotCrescente(v, 0, tamanho_vetor);
                 salvaArquivo(b, saida, tamanho_vetor, v);
-               
                 break;
             case 2:
                 printf("Digite o nome de arquivo de saida\n");
                 scanf(" %[^\n]s", saida);
-                qSDualPivotDecrescente(v, 0, tamanho_vetor);
+                quickSort(v, 0, tamanho_vetor);
                 salvaArquivo(b, saida, tamanho_vetor, v);                           
                 break;
             case 3:

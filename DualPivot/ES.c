@@ -56,7 +56,7 @@ return;
 
 void escreveArquivo(FILE* a, char *entrada, int tamanho_vetor){
     int i;
-    srand(time(NULL));
+    
     a = fopen(entrada, "a+");
     for (i=0;i<tamanho_vetor+1; i++){
         if (i==0) fprintf(a, "%d\n", tamanho_vetor);

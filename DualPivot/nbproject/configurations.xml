@@ -5,11 +5,14 @@
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
       <itemPath>ES.h</itemPath>
+      <itemPath>Funcoes.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
       <itemPath>ES.c</itemPath>
+      <itemPath>QuickSortDualPivot.c</itemPath>
+      <itemPath>QuickSortTradicional.c</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -42,6 +45,12 @@
       </item>
       <item path="ES.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Funcoes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="QuickSortDualPivot.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="QuickSortTradicional.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
@@ -68,6 +77,12 @@
       <item path="ES.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="ES.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Funcoes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="QuickSortDualPivot.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="QuickSortTradicional.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
