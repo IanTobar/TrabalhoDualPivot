@@ -36,8 +36,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/ES.o \
+	${OBJECTDIR}/OtherSorts.o \
 	${OBJECTDIR}/QuickSortDualPivot.o \
-	${OBJECTDIR}/QuickSortTradicional.o \
+	${OBJECTDIR}/Util.o \
 	${OBJECTDIR}/main.o
 
 
@@ -70,15 +71,20 @@ ${OBJECTDIR}/ES.o: ES.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ES.o ES.c
 
+${OBJECTDIR}/OtherSorts.o: OtherSorts.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/OtherSorts.o OtherSorts.c
+
 ${OBJECTDIR}/QuickSortDualPivot.o: QuickSortDualPivot.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/QuickSortDualPivot.o QuickSortDualPivot.c
 
-${OBJECTDIR}/QuickSortTradicional.o: QuickSortTradicional.c
+${OBJECTDIR}/Util.o: Util.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/QuickSortTradicional.o QuickSortTradicional.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Util.o Util.c
 
 ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
