@@ -81,5 +81,5 @@ void salvaArquivoSaida(relatorio *r, double tempo,char *saida) {
     FILE *f;
     f = fopen (saida,"w");
     fprintf (f,"%d;%d;%f",r->numComp,r->numTrocas,tempo);
-
+    fclose(f);
 }
