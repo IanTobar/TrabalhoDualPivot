@@ -4,7 +4,6 @@
 
 void qSDualPivotCrescente(int*vet, int menorPos, int maiorPos, relatorio *r) {
     if (menorPos < maiorPos) {
-        r->numComp++;
         int pivoEsq, pivoDir;
         pivoDir = divide(vet, menorPos, maiorPos, &pivoEsq, r);
         qSDualPivotCrescente(vet, menorPos, pivoEsq - 1, r);
@@ -13,36 +12,36 @@ void qSDualPivotCrescente(int*vet, int menorPos, int maiorPos, relatorio *r) {
     }
 }
 
-int divide(int* vet, int menorPos, int maiorPos, int*pivoEsq, relatorio *r) {
-    if (vet[menorPos] > vet[maiorPos]) {
-        r->numComp++;
-        troca(&vet[menorPos], &vet[maiorPos]);
-        r->numTrocas++;
-    }
+int particiona(int* vet, int inicio, int fim, int*pivoEsq, relatorio *r) {
 
-    int i = menorPos + 1;
-    int j = maiorPos - 1;
-    int k = menorPos + 1;
-    int l = vet[menorPos];
-    int m = vet[maiorPos];
+    //pivo a esquerda = posicao inicial do vetor
+    //pivo a direita = posicao final do vetor
+
+    //O pivo a esquerda sempre deve ser menor que o pivo a direita
+    if (vet[inicio] > vet[fim])
+        troca(&vet[inicio], &vet[fim]);
+
+    //Valores marcadores
+    //i = garante separacao de valores < pivo dir e > pivo esq
+    //k = garante separacao de valores < pivo esq
+    //j = garante separacao de valores > pivo a esq
+    int i = inicio + 1,j = fim - 1,k = inicio + 1;
+    //Valores pivo
+    int l = vet[inicio], m = vet[fim];//Pivo a esquerda, Pivo a direita
+
+    //Compara os marcadores com os valores pivos
     while (k <= j) {
         if (vet[k] < l) {
-            r->numComp++;
             troca(&vet[k], &vet[i]);
-            r->numTrocas++;
             i++;
         } else {
-            r->numComp++;
             if (vet[k] >= m) {
-                r->numComp++;
-                while (vet[j] > m && k < j) j--;
+                while (vet[j] > m && k < j)
+                    j--;
                 troca(&vet[k], &vet[j]);
-                r->numTrocas++;
                 j--;
                 if (vet[k] < l) {
-                    r->numComp++;
                     troca(&vet[k], &vet[i]);
-                    r->numTrocas++;
                     i++;
                 }
             }
@@ -52,9 +51,9 @@ int divide(int* vet, int menorPos, int maiorPos, int*pivoEsq, relatorio *r) {
     i--;
     j++;
 
-    troca(&vet[menorPos], &vet[i]);
-    troca(&vet[maiorPos], &vet[j]);
-    r->numTrocas += 2;
+    //Troca os valores pivo com seus marcadores
+    troca(&vet[inicio], &vet[i]);
+    troca(&vet[fim], &vet[j]);
     *pivoEsq = i;
     return j;
 }
